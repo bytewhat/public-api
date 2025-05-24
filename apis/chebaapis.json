@@ -1,5 +1,5 @@
 {
-  "id": "cheba-apis",
+  "id": "chebaapis",
   "name": "Cheba APIs",
   "description": "Simple API for generating random images",
   "website": "https://cheba-apis.vercel.app/",
@@ -12,7 +12,9 @@
   "tags": ["images", "random"],
   "dateAdded": "2025-05-24",
   "about": {
-    "overview": "This API provides animals that are known to have become extinct in the last 11.650 years(Holocene)."
+    "overview": "This API provides animals that are known to have become extinct in the last 11.650 years(Holocene).",
+    "features": [],
+    "useCases": []
   },
   "examples": {
     "endpoints": [

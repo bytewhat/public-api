@@ -70,11 +70,11 @@ class ApiValidator {
             codeSnippets: {
               type: 'object',
               properties: {
-                javascript: { type: 'string', minLength: 1 },
+                javascript: { type: 'string' },
                 python: { type: 'string' },
                 curl: { type: 'string' }
               },
-              required: ['javascript'],
+              required: [],
               additionalProperties: false
             }
           },

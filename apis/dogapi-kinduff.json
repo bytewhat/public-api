@@ -1,10 +1,10 @@
 {
-  "id": "dog-api-kinduff",
+  "id": "dogapi-kinduff",
   "name": "Dog API by kinduff",
   "description": "API for dog breeds, groups, and fun facts",
   "website": "https://dogapi.dog",
   "docs": "https://dogapi.dog/docs",
-  "category": "Pet Data",
+  "category": "Animals",
   "auth": "none",
   "https": true,
   "cors": true,

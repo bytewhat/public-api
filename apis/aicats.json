@@ -1,6 +1,6 @@
 {
-  "id": "ai-cats-api",
-  "name": "AI Cats API",
+  "id": "aicats",
+  "name": "AI Cats",
   "description": "Free AI-generated cat images with no usage restrictions",
   "website": "https://ai-cats.net/",
   "docs": "https://ai-cats.net/api-doc",
