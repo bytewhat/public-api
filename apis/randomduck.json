@@ -1,0 +1,63 @@
+{
+  "id": "random-duck",
+  "name": "Random Duck",
+  "description": "API for random duck images and HTTP status code ducks",
+  "website": "https://random-d.uk",
+  "docs": "https://random-d.uk/api",
+  "category": "Animals",
+  "auth": "none",
+  "https": true,
+  "cors": true,
+  "featured": false,
+  "tags": ["ducks", "images", "http-status", "fun"],
+  "dateAdded": "2025-05-24",
+  "about": {
+    "overview": "The Random Duck API provides access to a collection of duck images and GIFs, including unique images representing HTTP status codes, ideal for fun integrations and error pages.",
+    "features": [
+      "Random duck image and GIF retrieval",
+      "HTTP status code-specific duck images",
+      "Support for JSON metadata and direct image access"
+    ],
+    "useCases": [
+      "Enhancing error pages with themed duck images",
+      "Creating fun social media bots with duck content",
+      "Integrating random duck images into web applications"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/api/v2/random",
+        "description": "Returns a random duck image or GIF"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v2/list",
+        "description": "Returns a JSON object containing all available image and GIF filenames"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v2/{num}.jpg",
+        "description": "Returns a duck image representing a specific HTTP status code"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://random-d.uk/api/v2/random').then(res => res.json())",
+      "python": "import requests\nresponse = requests.get('https://random-d.uk/api/v2/random')",
+      "curl": "curl -X GET 'https://random-d.uk/api/v2/random'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Visit https://random-d.uk/api",
+      "Choose an endpoint like /api/v2/random",
+      "Make a GET request to fetch duck images or metadata"
+    ],
+    "authentication": {
+      "type": "None",
+      "description": "No authentication required for API access"
+    },
+    "sdks": []
+  }
+}

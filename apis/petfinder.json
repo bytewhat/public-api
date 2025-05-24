@@ -1,0 +1,67 @@
+{
+  "id": "petfinder",
+  "name": "Petfinder",
+  "description": "Access data on adoptable pets and shelters in North America",
+  "website": "https://www.petfinder.com/developers/",
+  "docs": "https://www.petfinder.com/developers/v2/docs/",
+  "category": "Animals",
+  "auth": "apiKey",
+  "https": true,
+  "cors": true,
+  "featured": false,
+  "tags": ["pets", "adoption", "shelters", "animals"],
+  "dateAdded": "2025-05-24",
+  "about": {
+    "overview": "The Petfinder API provides access to data on over 315,000 adoptable pets from nearly 14,000 shelters and rescue groups across the U.S., Canada, and Mexico, enabling developers to integrate pet adoption data into websites and apps.",
+    "features": [
+      "Search adoptable pets by location, breed, and characteristics",
+      "Access shelter and rescue organization details",
+      "Integrate pet listings into websites or shelter software"
+    ],
+    "useCases": [
+      "Displaying adoptable pets on shelter websites",
+      "Building mobile apps for pet adoption searches",
+      "Integrating pet data into shelter management software"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/v2/animals",
+        "description": "Returns a list of adoptable animals based on query parameters"
+      },
+      {
+        "method": "GET",
+        "path": "/v2/organizations",
+        "description": "Retrieves a list of animal welfare organizations"
+      },
+      {
+        "method": "GET",
+        "path": "/v2/animals/{id}",
+        "description": "Returns details for a specific animal by ID"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://api.petfinder.com/v2/animals', { headers: { Authorization: 'Bearer YOUR_API_TOKEN' } }).then(res => res.json())",
+      "python": "import requests\nresponse = requests.get('https://api.petfinder.com/v2/animals', headers={'Authorization': 'Bearer YOUR_API_TOKEN'})",
+      "curl": "curl -X GET 'https://api.petfinder.com/v2/animals' -H 'Authorization: Bearer YOUR_API_TOKEN'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Sign up for a Petfinder account at https://www.petfinder.com/developers/",
+      "Request an API key via the developer portal",
+      "Make your first request using the provided endpoints"
+    ],
+    "rateLimit": {
+      "requests": 1000,
+      "period": "per day"
+    },
+    "authentication": {
+      "type": "API Key",
+      "description": "Include your API key in the Authorization header as a Bearer token"
+    },
+    "sdks": []
+  }
+}

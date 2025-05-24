@@ -1,0 +1,83 @@
+{
+  "id": "thecatapi",
+  "name": "The Cat API",
+  "description": "API for random cat images, breed info, and user uploads",
+  "website": "https://thecatapi.com/",
+  "docs": "https://docs.thecatapi.com/",
+  "category": "Animals",
+  "auth": "apiKey",
+  "https": true,
+  "cors": true,
+  "featured": false,
+  "tags": ["cats", "images", "breeds", "random", "pets"],
+  "dateAdded": "2025-05-24",
+  "about": {
+    "overview": "The Cat API, provided by ThatAPICompany, is a public service API offering access to thousands of cat images, detailed breed information, and user-uploaded content. It supports features like voting, favoriting, and searching by breed or tags, making it ideal for developers building cat-themed applications, educational tools, or fun web projects. The API is free with an API key and is widely used for learning, prototyping, and production applications.",
+    "features": [
+      "Access to over 60,000 cat images and GIFs",
+      "Detailed breed information including traits and origins",
+      "User interaction features like voting and favoriting"
+    ],
+    "useCases": [
+      "Creating cat encyclopedias or breed guides",
+      "Building random cat image generators for apps or websites",
+      "Enhancing cat adoption platforms with breed insights"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/v1/images/search",
+        "description": "Returns a random cat image"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/breeds",
+        "description": "Returns a list of cat breeds with details"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/images/{image_id}",
+        "description": "Returns details for a specific cat image"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/images/upload",
+        "description": "Allows users to upload their own cat images"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "const headers = new Headers({'x-api-key': 'YOUR_API_KEY'});\nfetch('https://api.thecatapi.com/v1/images/search?limit=1', {headers})\n.then(res => res.json())\n.then(data => console.log(data[0].url));",
+      "python": "import requests\nheaders = {'x-api-key': 'YOUR_API_KEY'}\nresponse = requests.get('https://api.thecatapi.com/v1/images/search?limit=1', headers=headers)\nprint(response.json()[0]['url'])",
+      "curl": "curl -X GET 'https://api.thecatapi.com/v1/images/search?limit=1' -H 'x-api-key: YOUR_API_KEY'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Sign up for a free API key at https://thecatapi.com/",
+      "Include the API key in the 'x-api-key' header",
+      "Make your first request to /v1/images/search"
+    ],
+    "rateLimit": {
+      "requests": 1000,
+      "period": "per hour"
+    },
+    "authentication": {
+      "type": "API Key",
+      "description": "Include your API key in the 'x-api-key' header for all requests"
+    },
+    "sdks": [
+      {
+        "language": "JavaScript",
+        "name": "thecatapi",
+        "official": true
+      },
+      {
+        "language": "TypeScript",
+        "name": "thecatapi",
+        "official": true
+      }
+    ]
+  }
+}

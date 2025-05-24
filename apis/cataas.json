@@ -1,0 +1,68 @@
+{
+  "id": "cataas",
+  "name": "Cat as a Service (CATAAS)",
+  "description": "REST API for random cat images and GIFs with customization options",
+  "website": "https://cataas.com/",
+  "docs": "https://cataas.com/#/",
+  "category": "Animals",
+  "auth": "none",
+  "https": true,
+  "cors": true,
+  "featured": false,
+  "tags": ["cats", "images", "gifs", "fun", "random"],
+  "dateAdded": "2025-05-24",
+  "about": {
+    "overview": "Cat as a Service (CATAAS) is a REST API designed to deliver random cat images and GIFs, allowing users to spread joy or integrate feline content into applications. It supports customization like adding text, applying filters, and filtering by tags such as 'cute' or 'funny'. The API is free, does not require authentication, and is ideal for developers looking to add lighthearted content to their projects.",
+    "features": [
+      "Retrieve random cat images or GIFs",
+      "Customize images with text, filters, and tags",
+      "Upload custom cat images with tags"
+    ],
+    "useCases": [
+      "Adding fun cat images to websites or apps",
+      "Creating meme generators with custom text",
+      "Enhancing Discord or Slack bots with cat content"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/cat",
+        "description": "Returns a random cat image"
+      },
+      {
+        "method": "GET",
+        "path": "/cat/gif",
+        "description": "Returns a random cat GIF"
+      },
+      {
+        "method": "GET",
+        "path": "/cat/says/{text}",
+        "description": "Returns a cat image with custom text"
+      },
+      {
+        "method": "GET",
+        "path": "/api/cats?tags={tag}",
+        "description": "Returns a list of cats filtered by specific tags"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://cataas.com/cat?json=true').then(res => res.json()).then(data => console.log(data.url))",
+      "python": "import requests\nresponse = requests.get('https://cataas.com/cat?json=true')\ndata = response.json()\nprint(data['url'])",
+      "curl": "curl -X GET 'https://cataas.com/cat?json=true'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Visit https://cataas.com/",
+      "Use endpoints like /cat or /cat/gif without authentication",
+      "Integrate API responses into your application"
+    ],
+    "authentication": {
+      "type": "none",
+      "description": "No authentication required; all endpoints are publicly accessible"
+    },
+    "sdks": []
+  }
+}

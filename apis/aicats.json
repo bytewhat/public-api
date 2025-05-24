@@ -1,0 +1,58 @@
+{
+  "id": "ai-cats-api",
+  "name": "AI Cats API",
+  "description": "Free AI-generated cat images with no usage restrictions",
+  "website": "https://ai-cats.net/",
+  "docs": "https://ai-cats.net/api-doc",
+  "category": "Animals",
+  "auth": "none",
+  "https": true,
+  "cors": true,
+  "featured": false,
+  "tags": ["cats", "images", "ai-generated", "random", "fun"],
+  "dateAdded": "2025-05-24",
+  "about": {
+    "overview": "The AI Cats API, provided by ai-cats.net, offers free access to AI-generated cat images for use in applications, websites, or creative projects. With no authentication required and no usage restrictions, it is designed for developers and cat enthusiasts to easily integrate unique, high-quality cat images into their work. The API is simple to use and focuses on delivering visually appealing, AI-crafted feline content.",
+    "features": [
+      "Access to AI-generated cat images",
+      "No usage restrictions for commercial or personal use",
+      "Simple endpoints for quick integration"
+    ],
+    "useCases": [
+      "Enhancing websites with unique cat visuals",
+      "Creating cat-themed apps or games",
+      "Generating content for social media or marketing"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/v1/cat?size=1024&theme=All",
+        "description": "Returns a random AI-generated cat image"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/cat/search",
+        "description": "Searches for cat images in the database"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://api.ai-cats.net/v1/cat').then(res => res.blob()).then(blob => console.log(URL.createObjectURL(blob)))",
+      "python": "import requests\nresponse = requests.get('https://api.ai-cats.net/v1/cat')\nwith open('cat_image.jpg', 'wb') as f: f.write(response.content)",
+      "curl": "curl -X GET 'https://api.ai-cats.net/v1/cat' -o cat_image.jpg"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Visit https://ai-cats.net/api-doc",
+      "Use the /v1/cat endpoint without authentication",
+      "Integrate the image URL into your application"
+    ],
+    "authentication": {
+      "type": "none",
+      "description": "No authentication required; all endpoints are publicly accessible"
+    },
+    "sdks": []
+  }
+}

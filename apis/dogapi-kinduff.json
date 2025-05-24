@@ -1,0 +1,58 @@
+{
+  "id": "dog-api-kinduff",
+  "name": "Dog API by kinduff",
+  "description": "API for dog breeds, groups, and fun facts",
+  "website": "https://dogapi.dog",
+  "docs": "https://dogapi.dog/docs",
+  "category": "Pet Data",
+  "auth": "none",
+  "https": true,
+  "cors": true,
+  "featured": false,
+  "tags": ["dogs", "breeds", "facts", "json"],
+  "dateAdded": "2025-05-24",
+  "about": {
+    "overview": "The Dog API provides information on over 340 dog breeds, 20 breed groups, and fun facts, designed for easy integration into websites and applications.",
+    "features": [
+      "Access to data on 340+ dog breeds",
+      "Information on 20 breed groups",
+      "Fun dog facts for educational and entertainment purposes"
+    ],
+    "useCases": [
+      "Building dog breed information websites",
+      "Creating educational tools for pet enthusiasts",
+      "Powering bot services with random dog facts"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/api/v2/breeds",
+        "description": "Retrieves a list of dog breeds with detailed information"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v2/facts",
+        "description": "Returns random dog facts"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://dogapi.dog/api/v2/breeds').then(res => res.json())",
+      "python": "import requests\nresponse = requests.get('https://dogapi.dog/api/v2/breeds')",
+      "curl": "curl -X GET 'https://dogapi.dog/api/v2/breeds'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Visit https://dogapi.dog/docs",
+      "Explore the API endpoints for breeds and facts",
+      "Make a GET request to retrieve data"
+    ],
+    "authentication": {
+      "type": "None",
+      "description": "No authentication required for API access"
+    },
+    "sdks": []
+  }
+}

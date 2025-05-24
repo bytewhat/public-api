@@ -1,0 +1,63 @@
+{
+  "id": "dog-ceo",
+  "name": "Dog CEO",
+  "description": "Access 20,000+ dog images by 120+ breeds",
+  "website": "https://dog.ceo",
+  "docs": "https://dog.ceo/dog-api/",
+  "category": "Animals",
+  "auth": "none",
+  "https": true,
+  "cors": true,
+  "featured": false,
+  "tags": ["dogs", "images", "breeds", "open-source"],
+  "dateAdded": "2025-05-24",
+  "about": {
+    "overview": "The Dog CEO API provides programmatic access to over 20,000 open-source dog images, organized by over 120 breeds, sourced from the Stanford Dogs Dataset, ideal for developers and pet enthusiasts.",
+    "features": [
+      "Access to 20,000+ dog images",
+      "Support for 120+ breeds and sub-breeds",
+      "Random image retrieval by breed or globally"
+    ],
+    "useCases": [
+      "Building dog breed galleries for websites",
+      "Creating educational apps about dog breeds",
+      "Enhancing social media bots with dog images"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/api/breeds/list/all",
+        "description": "Returns a list of all dog breeds and sub-breeds"
+      },
+      {
+        "method": "GET",
+        "path": "/api/breeds/image/random",
+        "description": "Retrieves a random dog image from the collection"
+      },
+      {
+        "method": "GET",
+        "path": "/api/breed/{breed}/images/random",
+        "description": "Returns a random image for a specific breed"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://dog.ceo/api/breeds/image/random').then(res => res.json())",
+      "python": "import requests\nresponse = requests.get('https://dog.ceo/api/breeds/image/random')",
+      "curl": "curl -X GET 'https://dog.ceo/api/breeds/image/random'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Visit https://dog.ceo/dog-api/",
+      "Choose an endpoint like /api/breeds/image/random",
+      "Make a GET request to fetch dog images"
+    ],
+    "authentication": {
+      "type": "None",
+      "description": "No authentication required for API access"
+    },
+    "sdks": []
+  }
+}

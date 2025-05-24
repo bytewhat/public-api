@@ -1,0 +1,41 @@
+{
+  "id": "cheba-apis",
+  "name": "Cheba APIs",
+  "description": "Simple API for generating random images",
+  "website": "https://cheba-apis.vercel.app/",
+  "docs": "https://cheba-apis.vercel.app/",
+  "category": "Animals",
+  "auth": "none",
+  "https": true,
+  "cors": true,
+  "featured": false,
+  "tags": ["images", "random"],
+  "dateAdded": "2025-05-24",
+  "about": {
+    "overview": "This API provides animals that are known to have become extinct in the last 11.650 years(Holocene)."
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/api/v1/animal/",
+        "description": "Returns one random animal"
+      }
+    ],
+    "codeSnippets": {
+      "curl": "curl -X GET 'https://extinct-api.herokuapp.com/api/v1/animal/'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Visit https://cheba-apis.vercel.app/",
+      "Use the /api/v1 endpoint without authentication",
+      "Integrate into your application"
+    ],
+    "authentication": {
+      "type": "none",
+      "description": "No authentication required; all endpoints are publicly accessible"
+    },
+    "sdks": []
+  }
+}
