@@ -13,7 +13,7 @@ A collective list of public APIs for use in software and web development.
 
 ## Repository Information
 
-- **Total APIs**: 5
+- **Total APIs**: 13
 - **Categories**: 52
 - **Featured APIs**: 0
 - **Last Updated**: 2025-05-24
@@ -71,6 +71,18 @@ A collective list of public APIs for use in software and web development.
 * [Vehicle](#vehicle)
 * [Video](#video)
 * [Weather](#weather)
+
+### Animals
+| API | Description | Auth | HTTPS | CORS |
+|---|---|---|---|---|
+| [AI Cats](https://ai-cats.net/) | Free AI-generated cat images with no usage restrictions | No | Yes | Yes |
+| [Cat as a Service (CATAAS)](https://cataas.com/) | REST API for random cat images and GIFs with customization options | No | Yes | Yes |
+| [Cheba APIs](https://cheba-apis.vercel.app/) | Simple API for generating random images | No | Yes | Yes |
+| [Dog API by kinduff](https://dogapi.dog) | API for dog breeds, groups, and fun facts | No | Yes | Yes |
+| [Dog CEO](https://dog.ceo) | Access 20,000+ dog images by 120+ breeds | No | Yes | Yes |
+| [Petfinder](https://www.petfinder.com/developers/) | Access data on adoptable pets and shelters in North America | `apiKey` | Yes | Yes |
+| [Random Duck](https://random-d.uk) | API for random duck images and HTTP status code ducks | No | Yes | Yes |
+| [The Cat API](https://thecatapi.com/) | API for random cat images, breed info, and user uploads | `apiKey` | Yes | Yes |
 
 ### Blockchain
 | API | Description | Auth | HTTPS | CORS |
