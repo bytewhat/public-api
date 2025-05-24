@@ -1,0 +1,83 @@
+{
+    "id": "tatum",
+    "name": "Tatum",
+    "description": "Unified blockchain development platform for 100+ protocols",
+    "website": "https://tatum.io/",
+    "docs": "https://docs.tatum.io/reference/welcome-to-the-tatum-api-reference",
+    "category": "Blockchain",
+    "auth": "apiKey",
+    "https": true,
+    "cors": true,
+    "featured": false,
+    "tags": ["blockchain", "web3", "crypto", "nft", "wallet"],
+    "dateAdded": "2025-05-24",
+    "about": {
+      "overview": "Tatum provides a unified framework for building Web3 applications across over 100 blockchain protocols, simplifying development with a single API. It eliminates the need to manage nodes or learn blockchain-specific coding, offering tools for wallets, NFTs, transactions, and more.",
+      "features": [
+        "Support for 100+ blockchain protocols",
+        "Simplified RPC calls and wallet management",
+        "NFT and token creation, transfer, and analytics"
+      ],
+      "useCases": [
+        "Building crypto wallets and exchanges",
+        "Creating and managing NFTs for marketplaces or games",
+        "Developing decentralized identity solutions"
+      ]
+    },
+    "examples": {
+      "endpoints": [
+        {
+          "method": "POST",
+          "path": "/v3/bitcoin/wallet",
+          "description": "Generates a Bitcoin wallet address and private key"
+        },
+        {
+          "method": "GET",
+          "path": "/v3/ledger/account/balance",
+          "description": "Retrieves the balance of a specified account"
+        },
+        {
+          "method": "POST",
+          "path": "/v3/nft/mint",
+          "description": "Mints a new NFT on a specified blockchain"
+        }
+      ],
+      "codeSnippets": {
+        "javascript": "const { TatumSDK, Network } = require('@tatumio/tatum');\nconst tatum = await TatumSDK.init({ network: Network.ETHEREUM });\nconst balance = await tatum.ledger.account.getBalance('0x690B9A9E9aa1C9dB991C7721a92d351Db4FaC990');",
+        "python": "from tatum import TatumSDK, Network\ntatum = TatumSDK(network=Network.ETHEREUM)\nbalance = tatum.ledger.account.get_balance('0x690B9A9E9aa1C9dB991C7721a92d351Db4FaC990')",
+        "curl": "curl -X GET 'https://api.tatum.io/v3/ledger/account/balance/0x690B9A9E9aa1C9dB991C7721a92d351Db4FaC990' -H 'x-api-key: YourApiKeyToken'"
+      }
+    },
+    "documentation": {
+      "quickStart": [
+        "Sign up at https://dashboard.tatum.io/",
+        "Generate an API key in the Tatum Dashboard",
+        "Use the API key to make requests to Tatum endpoints"
+      ],
+      "rateLimit": {
+        "requests": 3,
+        "period": "per second"
+      },
+      "authentication": {
+        "type": "API Key",
+        "description": "Include your API key in the x-api-key header or as a query parameter"
+      },
+      "sdks": [
+        {
+          "language": "JavaScript",
+          "name": "tatum-js",
+          "official": true
+        },
+        {
+          "language": "PHP",
+          "name": "tatum-php",
+          "official": true
+        },
+        {
+          "language": "C#",
+          "name": "tatum-csharp",
+          "official": true
+        }
+      ]
+    }
+  }

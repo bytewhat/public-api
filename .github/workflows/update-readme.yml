@@ -1,0 +1,130 @@
+name: Update README
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'apis/**'
+      - 'categories.json'
+      - 'featured.json'
+      - 'scripts/**'
+
+  pull_request:
+    types: [ closed ]
+    branches: [ main ]
+    paths:
+      - 'apis/**'
+      - 'categories.json' 
+      - 'featured.json'
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  update-readme:
+    # Only run on pushes to main/master or when PRs are merged
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true) || github.event_name == 'workflow_dispatch'
+    
+    runs-on: self-hosted
+    
+    permissions:
+      contents: write
+      pull-requests: read
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Mark repository as safe
+        run: git config --global --add safe.directory ${{ github.workspace }}
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+          
+      - name: Install dependencies
+        run: |
+          # Add ajv-formats dependency which is needed for validation
+          pnpm add ajv-formats
+          pnpm install
+
+      - name: Install jq
+        run: |
+          if ! command -v jq &> /dev/null; then
+            echo "Installing jq..."
+            if [ "$(uname)" == "Linux" ]; then
+              sudo apt-get update && sudo apt-get install -y jq
+            elif [ "$(uname)" == "Darwin" ]; then
+              brew install jq
+            else
+              echo "Error: Unsupported OS for automatic jq installation"
+              echo "Please install jq manually: https://stedolan.github.io/jq/download/"
+              exit 1
+            fi
+          else
+            echo "jq is already installed"
+          fi
+          
+      - name: Validate API data
+        run: |
+          echo "🔍 Validating API data..."
+          pnpm run validate-apis
+          
+      - name: Generate README
+        run: |
+          echo "📝 Generating README.md..."
+          pnpm run generate-readme
+          
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet README.md; then
+            echo "No changes to README.md"
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "README.md has been updated"
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Commit and push changes
+        if: steps.changes.outputs.changed == 'true'
+        uses: actions4git/add-commit-push@v1
+        with:
+          add-pathspec: 'README.md'
+          commit-message: |
+            ${{ github.event_name == 'push' && format('📝 Auto-update README.md after push to {0}', github.ref_name) || '' }}${{ github.event_name == 'pull_request' && format('📝 Auto-update README.md after PR #{0} merge', github.event.pull_request.number) || '' }}${{ github.event_name == 'workflow_dispatch' && '📝 Auto-update README.md (manual trigger)' || '' }}
+
+      - name: Create summary
+        if: always()
+        run: |
+          echo "## 📊 README Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- **Trigger**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Branch**: ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+          
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "- **PR**: #${{ github.event.pull_request.number }} - ${{ github.event.pull_request.title }}" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          if [[ "${{ steps.changes.outputs.changed }}" == "true" ]]; then
+            echo "- **Status**: ✅ README.md updated successfully" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "- **Status**: ℹ️ No changes needed" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          # Add API statistics
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📈 Repository Stats" >> $GITHUB_STEP_SUMMARY
+          
+          API_COUNT=$(find apis/ -name "*.json" | wc -l)
+          CATEGORY_COUNT=$(jq length categories.json)
+          FEATURED_COUNT=$(jq length featured.json)
+          
+          echo "- **Total APIs**: $API_COUNT" >> $GITHUB_STEP_SUMMARY
+          echo "- **Categories**: $CATEGORY_COUNT" >> $GITHUB_STEP_SUMMARY  
+          echo "- **Featured**: $FEATURED_COUNT" >> $GITHUB_STEP_SUMMARY 

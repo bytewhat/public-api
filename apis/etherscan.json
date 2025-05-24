@@ -1,0 +1,78 @@
+{
+  "id": "etherscan",
+  "name": "Etherscan",
+  "description": "Access Ethereum blockchain data like transactions and balances",
+  "website": "https://etherscan.io",
+  "docs": "https://docs.etherscan.io/etherscan-v2",
+  "category": "Blockchain",
+  "auth": "apiKey",
+  "https": true,
+  "cors": true,
+  "featured": false,
+  "tags": ["ethereum", "blockchain", "transactions", "smart-contracts", "evm"],
+  "dateAdded": "2025-05-24",
+  "about": {
+    "overview": "The Etherscan API provides programmatic access to Ethereum blockchain data, enabling developers to retrieve information such as account balances, transactions, token data, and smart contract details. It supports both free and premium plans, with V2 offering multichain support for over 50 EVM-compatible chains using a single API key.",
+    "features": [
+      "Retrieve account balances and transaction histories",
+      "Access token supply and transfer events",
+      "Query smart contract ABIs and verify source code"
+    ],
+    "useCases": [
+      "Building decentralized applications (dApps) on Ethereum",
+      "Monitoring wallet balances and token transactions",
+      "Automating smart contract verification and analysis"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/api?module=account&action=balance",
+        "description": "Returns the ETH balance of a specified address"
+      },
+      {
+        "method": "GET",
+        "path": "/api?module=account&action=tokentx",
+        "description": "Returns a list of ERC-20 token transfer events by address"
+      },
+      {
+        "method": "GET",
+        "path": "/api?module=contract&action=getabi",
+        "description": "Retrieves the ABI of a smart contract"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://api.etherscan.io/v2/api?module=account&action=balance&address=0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae&tag=latest&apikey=YourApiKeyToken').then(res => res.json())",
+      "python": "import requests\nresponse = requests.get('https://api.etherscan.io/v2/api?module=account&action=balance&address=0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae&tag=latest&apikey=YourApiKeyToken')",
+      "curl": "curl -X GET 'https://api.etherscan.io/v2/api?module=account&action=balance&address=0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae&tag=latest&apikey=YourApiKeyToken'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Create an Etherscan account at https://etherscan.io/register",
+      "Generate an API key from https://etherscan.io/myapikey",
+      "Use the API key in GET/POST requests to query endpoints"
+    ],
+    "rateLimit": {
+      "requests": 5,
+      "period": "per second"
+    },
+    "authentication": {
+      "type": "API Key",
+      "description": "Include your API key as a query parameter in the URL using &apikey=YourApiKeyToken"
+    },
+    "sdks": [
+      {
+        "language": "JavaScript",
+        "name": "etherscan-api",
+        "official": false
+      },
+      {
+        "language": "Python",
+        "name": "py-etherscan-api",
+        "official": false
+      }
+    ]
+  }
+}

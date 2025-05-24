@@ -1,0 +1,134 @@
+name: Validate PR
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'apis/**'
+      - 'categories.json'
+      - 'featured.json'
+
+jobs:
+  validate:
+    runs-on: self-hosted
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+          
+      - name: Install dependencies
+        run: |
+          pnpm add ajv-formats
+          pnpm install
+
+      - name: Install jq
+        run: |
+          if ! command -v jq &> /dev/null; then
+            echo "Installing jq..."
+            if [ "$(uname)" == "Linux" ]; then
+              sudo apt-get update && sudo apt-get install -y jq
+            elif [ "$(uname)" == "Darwin" ]; then
+              brew install jq
+            else
+              echo "Error: Unsupported OS for automatic jq installation"
+              echo "Please install jq manually: https://stedolan.github.io/jq/download/"
+              exit 1
+            fi
+          else
+            echo "jq is already installed"
+          fi
+
+      - name: Validate API data
+        run: |
+          echo "🔍 Validating API data..."
+          pnpm run validate-apis
+          
+      - name: Generate preview README
+        run: |
+          echo "📝 Generating preview README..."
+          pnpm run generate-readme
+          
+      - name: Check README generation
+        run: |
+          if [ -f README.md ]; then
+            echo "✅ README.md generated successfully"
+            echo "📊 Preview stats:"
+            
+            API_COUNT=$(find apis/ -name "*.json" | wc -l)
+            CATEGORY_COUNT=$(jq length categories.json)
+            FEATURED_COUNT=$(jq length featured.json)
+            
+            echo "- APIs: $API_COUNT"
+            echo "- Categories: $CATEGORY_COUNT"
+            echo "- Featured: $FEATURED_COUNT"
+          else
+            echo "❌ Failed to generate README.md"
+            exit 1
+          fi
+          
+      - name: Validate changed files
+        run: |
+          echo "🔍 Checking changed files..."
+          
+          # Get list of changed files in this PR
+          CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
+          
+          echo "Changed files:"
+          echo "$CHANGED_FILES"
+          
+          # Check if any new API files were added
+          NEW_APIS=$(echo "$CHANGED_FILES" | grep "^apis/.*\.json$" || true)
+          
+          if [ -n "$NEW_APIS" ]; then
+            echo ""
+            echo "🆕 New/Modified API files detected:"
+            echo "$NEW_APIS"
+            
+            # Validate each new/modified API file individually
+            for api_file in $NEW_APIS; do
+              if [ -f "$api_file" ]; then
+                api_id=$(basename "$api_file" .json)
+                echo "Validating $api_id..."
+                pnpm run validate-apis "$api_id"
+              fi
+            done
+          fi
+          
+      - name: Create validation summary
+        if: always()
+        run: |
+          echo "## 🔍 Validation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Count files
+          API_COUNT=$(find apis/ -name "*.json" | wc -l)
+          CATEGORY_COUNT=$(jq length categories.json)
+          FEATURED_COUNT=$(jq length featured.json)
+          
+          echo "### 📊 Current Repository Stats" >> $GITHUB_STEP_SUMMARY
+          echo "- **Total APIs**: $API_COUNT" >> $GITHUB_STEP_SUMMARY
+          echo "- **Categories**: $CATEGORY_COUNT" >> $GITHUB_STEP_SUMMARY
+          echo "- **Featured APIs**: $FEATURED_COUNT" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Check what changed
+          CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
+          if [ -n "$CHANGED_FILES" ]; then
+            echo "### 📝 Files Changed in This PR" >> $GITHUB_STEP_SUMMARY
+            echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+            echo "$CHANGED_FILES" >> $GITHUB_STEP_SUMMARY
+            echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ All validations passed! This PR is ready for review." >> $GITHUB_STEP_SUMMARY 

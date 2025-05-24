@@ -1,0 +1,23 @@
+name: Prevent Workflow Changes
+on:
+  pull_request:
+
+jobs:
+  check_workflow_changes:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get changed files in workflows directory
+        id: changed_workflow_files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: .github/workflows/** # Glob pattern for the workflow files
+
+      - name: Fail if workflow files were changed
+        if: steps.changed_workflow_files.outputs.any_changed == 'true'
+        run: |
+          echo "::error title=Workflow Modification Denied::Modifying files in .github/workflows/ is not allowed. Please revert these changes."
+          echo "If changes to workflows are necessary, they must be done by a repository administrator directly on the main branch or through a separate, approved process."
+          exit 1 

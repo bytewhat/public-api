@@ -1,0 +1,85 @@
+{
+  "id": "openweathermap",
+  "name": "OpenWeatherMap",
+  "description": "Access current weather data, forecasts, and historical data for any location",
+  "website": "https://openweathermap.org",
+  "docs": "https://openweathermap.org/api",
+  "category": "Weather",
+  "auth": "apiKey",
+  "https": true,
+  "cors": true,
+  "featured": false,
+  "tags": ["weather", "forecast", "climate", "meteorology", "geolocation"],
+  "dateAdded": "2025-05-24",
+  "about": {
+    "overview": "OpenWeatherMap provides a comprehensive set of weather APIs that deliver current weather data, forecasts, historical data, and weather maps for any location worldwide. The service collects and processes data from multiple sources including meteorological broadcast services, raw data from airport weather stations, radar data, and more.",
+    "features": [
+      "Current weather data for any location",
+      "5-day and 16-day weather forecasts",
+      "Historical weather data spanning 40+ years",
+      "Weather maps and layers for visualization"
+    ],
+    "useCases": [
+      "Adding weather information to travel and navigation apps",
+      "Building weather-dependent scheduling tools",
+      "Developing agricultural planning applications",
+      "Creating outdoor activity recommendation systems"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/data/2.5/weather",
+        "description": "Returns current weather data for a specific location"
+      },
+      {
+        "method": "GET",
+        "path": "/data/2.5/forecast",
+        "description": "Provides 5-day weather forecast with data every 3 hours"
+      },
+      {
+        "method": "GET",
+        "path": "/data/2.5/onecall",
+        "description": "Returns current, minute forecast, hourly forecast and daily forecast data"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY').then(res => res.json())",
+      "python": "import requests\nresponse = requests.get('https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY')",
+      "curl": "curl -X GET 'https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Sign up for a free account at https://home.openweathermap.org/users/sign_up",
+      "Get your API key from the API keys tab in your account dashboard",
+      "Make your first API request using your key as the appid parameter"
+    ],
+    "rateLimit": {
+      "requests": 60,
+      "period": "per minute"
+    },
+    "authentication": {
+      "type": "API Key",
+      "description": "Include your API key as the appid query parameter in each request"
+    },
+    "sdks": [
+      {
+        "language": "JavaScript",
+        "name": "openweather-apis",
+        "official": false
+      },
+      {
+        "language": "Python",
+        "name": "pyowm",
+        "official": false
+      },
+      {
+        "language": "PHP",
+        "name": "cmfcmf/openweathermap-php-api",
+        "official": false
+      }
+    ]
+  }
+} 

@@ -1,0 +1,67 @@
+{
+  "id": "checkcryptoaddress",
+  "name": "Check Crypto Address",
+  "description": "Validate crypto wallet addresses and track transactions",
+  "website": "https://checkcryptoaddress.com",
+  "docs": "https://checkcryptoaddress.com/api-docs",
+  "category": "Blockchain",
+  "auth": "apiKey",
+  "https": true,
+  "cors": true,
+  "featured": false,
+  "tags": ["blockchain", "crypto", "wallet", "validation", "transactions"],
+  "dateAdded": "2025-05-24",
+  "about": {
+    "overview": "The Check Crypto Address API enables developers to validate wallet addresses for over 100 cryptocurrencies and track transfer transactions. It provides real-time transaction notifications and scam address verification, supporting networks like Bitcoin, Ethereum, and Solana.",
+    "features": [
+      "Validate wallet addresses for 100+ cryptocurrencies",
+      "Track incoming and outgoing transactions in real-time",
+      "Access user-reported scam address database"
+    ],
+    "useCases": [
+      "Verifying wallet addresses before crypto transactions",
+      "Monitoring wallet activity for financial applications",
+      "Detecting and avoiding scam-related addresses"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "POST",
+        "path": "/wallet-checks",
+        "description": "Validates the syntax and format of a cryptocurrency wallet address"
+      },
+      {
+        "method": "POST",
+        "path": "/tracks",
+        "description": "Tracks transactions for a specified address with webhook notifications"
+      },
+      {
+        "method": "GET",
+        "path": "/scam-reports",
+        "description": "Retrieves a list of reported scam addresses with pagination"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://api.checkcryptoaddress.com/wallet-checks', { method: 'POST', headers: { 'X-Api-Key': 'YourApiKeyToken', 'Content-Type': 'application/json' }, body: JSON.stringify({ address: '0x00', network: 'eth' }) }).then(res => res.json())",
+      "python": "import requests\nresponse = requests.post('https://api.checkcryptoaddress.com/wallet-checks', headers={'X-Api-Key': 'YourApiKeyToken', 'Content-Type': 'application/json'}, json={'address': '0x00', 'network': 'eth'})",
+      "curl": "curl -X POST 'https://api.checkcryptoaddress.com/wallet-checks' -H 'X-Api-Key: YourApiKeyToken' -H 'Content-Type: application/json' -d '{\"address\": \"0x00\", \"network\": \"eth\"}'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Sign up at https://checkcryptoaddress.com/",
+      "Obtain an API key from your account dashboard",
+      "Make requests to API endpoints with the API key"
+    ],
+    "rateLimit": {
+      "requests": 1000,
+      "period": "per day"
+    },
+    "authentication": {
+      "type": "API Key",
+      "description": "Include your API key in the X-Api-Key header for authenticated requests"
+    },
+    "sdks": []
+  }
+}

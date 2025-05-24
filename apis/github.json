@@ -1,0 +1,91 @@
+{
+  "id": "github",
+  "name": "GitHub",
+  "description": "Access GitHub data including repositories, issues, pull requests, and user information",
+  "website": "https://github.com",
+  "docs": "https://docs.github.com/en/rest/reference",
+  "category": "Development",
+  "auth": "oauth",
+  "https": true,
+  "cors": true,
+  "featured": false,
+  "tags": ["git", "version-control", "repositories", "issues", "open-source"],
+  "dateAdded": "2025-05-24",
+  "about": {
+    "overview": "The GitHub REST API allows developers to interact with GitHub programmatically, providing access to repositories, issues, pull requests, users, organizations, and other GitHub resources. It enables automation of workflows, integration with other tools, and the ability to build applications that extend GitHub's functionality.",
+    "features": [
+      "Repository management and interaction",
+      "Issue and pull request tracking",
+      "User and organization data access",
+      "Webhook management for event-driven automation",
+      "GitHub Actions workflow control"
+    ],
+    "useCases": [
+      "Building CI/CD integrations and development tools",
+      "Creating custom dashboards for project management",
+      "Automating repository maintenance tasks",
+      "Developing GitHub Apps and OAuth applications"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}",
+        "description": "Get repository information"
+      },
+      {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/issues",
+        "description": "List repository issues"
+      },
+      {
+        "method": "POST",
+        "path": "/repos/{owner}/{repo}/pulls",
+        "description": "Create a new pull request"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "const octokit = new Octokit({ auth: 'PERSONAL_ACCESS_TOKEN' });\nconst { data } = await octokit.rest.repos.get({\n  owner: 'octocat',\n  repo: 'hello-world'\n});",
+      "python": "from github import Github\ng = Github('PERSONAL_ACCESS_TOKEN')\nrepo = g.get_repo('octocat/hello-world')",
+      "curl": "curl -X GET -H \"Authorization: token PERSONAL_ACCESS_TOKEN\" \\\n  https://api.github.com/repos/octocat/hello-world"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Create a GitHub account at https://github.com/join",
+      "Generate a personal access token at https://github.com/settings/tokens",
+      "Use the token for authentication in API requests"
+    ],
+    "rateLimit": {
+      "requests": 5000,
+      "period": "per hour"
+    },
+    "authentication": {
+      "type": "OAuth or Personal Access Token",
+      "description": "Include your token in the Authorization header as 'token YOUR_TOKEN'"
+    },
+    "sdks": [
+      {
+        "language": "JavaScript",
+        "name": "octokit/rest.js",
+        "official": true
+      },
+      {
+        "language": "Python",
+        "name": "PyGithub",
+        "official": false
+      },
+      {
+        "language": "Ruby",
+        "name": "octokit.rb",
+        "official": true
+      },
+      {
+        "language": ".NET",
+        "name": "octokit.net",
+        "official": true
+      }
+    ]
+  }
+} 

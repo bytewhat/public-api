@@ -1,0 +1,42 @@
+{
+  "name": "public-api",
+  "version": "1.0.0",
+  "description": "A collective list of free APIs for use in software and web development",
+  "main": "scripts/generate-readme.js",
+  "scripts": {
+    "generate-readme": "node scripts/generate-readme.js",
+    "validate-apis": "node scripts/validate-apis.js",
+    "build": "pnpm run generate-readme",
+    "dev": "node scripts/dev-setup.js",
+    "test": "node scripts/dev-setup.js test",
+    "stats": "node scripts/dev-setup.js stats",
+    "example": "node scripts/dev-setup.js example",
+    "prepare": "pnpm run validate-apis && pnpm run generate-readme"
+  },
+  "keywords": [
+    "api",
+    "public-api",
+    "free-api",
+    "development",
+    "apis"
+  ],
+  "author": "Public APIs Contributors",
+  "license": "MIT",
+  "devDependencies": {
+    "ajv": "^8.12.0",
+    "ajv-formats": "^2.1.1",
+    "fs-extra": "^11.1.1",
+    "lodash": "^4.17.21"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bytewhat/public-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bytewhat/public-api/issues"
+  },
+  "homepage": "https://github.com/bytewhat/public-api#readme"
+} 
