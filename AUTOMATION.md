@@ -220,7 +220,6 @@ All APIs must conform to this schema:
 - `category`: Must match a category in categories.json
 - `auth`: Authentication type (`'apiKey'`, `'oauth'`, or `'none'`)
 - `https`: Boolean indicating HTTPS support
-- `cors`: Boolean indicating CORS support
 - `dateAdded`: Date in YYYY-MM-DD format
 
 **Optional Fields:**

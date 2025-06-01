@@ -1,0 +1,59 @@
+{
+  "id": "maldatabase",
+  "name": "Maldatabase",
+  "description": "A REST API providing malware datasets and threat intelligence feeds for researchers and companies, supporting big data visualization and machine learning",
+  "website": "https://maldatabase.com",
+  "docs": "https://maldatabase.com/api-doc.html#feed-get-feed-post",
+  "category": "Anti-Malware",
+  "auth": "apiKey",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "malware",
+    "threat intelligence",
+    "cybersecurity",
+    "datasets"
+  ],
+  "about": {
+    "overview": "Maldatabase API delivers comprehensive malware datasets and threat intelligence feeds in CSV or JSON formats, including details like SHA256, file types, and threat levels, designed for data science, threat analysis, and machine learning applications.",
+    "features": [
+      "Detailed malware datasets with SHA256, MD5, and SHA1 hashes",
+      "Threat intelligence feeds with domains and processes",
+      "Support for CSV and JSON output formats",
+      "Premium services for customized data delivery"
+    ],
+    "useCases": [
+      "Building machine learning models for malware detection",
+      "Enhancing threat intelligence platforms",
+      "Visualizing malware networks for research",
+      "Integrating with cybersecurity tools for real-time analysis"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "POST",
+        "path": "/download",
+        "description": "Download the latest daily malware feed in CSV or JSON format"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://api.maldatabase.com/download', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_API_KEY', 'Accept-Encoding': 'gzip' } }).then(res => res.json())",
+      "python": "import requests\nresponse = requests.post('https://api.maldatabase.com/download', headers={'Authorization': 'Bearer YOUR_API_KEY', 'Accept-Encoding': 'gzip'})",
+      "curl": "curl -X POST https://api.maldatabase.com/download -H 'Authorization: Bearer YOUR_API_KEY' -H 'Accept-Encoding: gzip'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Contact info@maldatabase.com to request API access",
+      "Obtain an API key upon approval",
+      "Make a POST request to https://api.maldatabase.com/download to download the daily malware feed"
+    ],
+    "authentication": {
+      "type": "API Key",
+      "description": "Include your API key in the Authorization header as 'Bearer YOUR_API_KEY' for all requests. Content is gzip encoded."
+    },
+    "sdks": []
+  }
+}

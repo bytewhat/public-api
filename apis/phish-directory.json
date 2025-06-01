@@ -1,0 +1,64 @@
+{
+  "id": "phish-directory",
+  "name": "Phish Directory",
+  "description": "A community-driven REST API for checking and reporting phishing URLs, supporting JSON and CSV formats for enhanced cybersecurity",
+  "website": "https://www.phish.directory",
+  "docs": "https://api.phish.directory/docs/#/",
+  "category": "Anti-Malware",
+  "auth": "apiKey",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "phishing",
+    "cybersecurity",
+    "threat intelligence",
+    "urls"
+  ],
+  "about": {
+    "overview": "Phish Directory API enables developers to check and report phishing URLs in real-time, leveraging a community-curated database to enhance cybersecurity for applications and security tools, with support for JSON and CSV responses.",
+    "features": [
+      "Check URLs against a phishing database",
+      "Report new phishing URLs with detailed metadata",
+      "Support for JSON and CSV response formats",
+      "Community-driven and continuously updated"
+    ],
+    "useCases": [
+      "Integrating phishing detection into security applications",
+      "Enhancing Discord bot safety features",
+      "Automating threat intelligence for web platforms",
+      "Educating users about phishing risks"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/domain/check",
+        "description": "Check if a domain is associated with phishing activity"
+      },
+      {
+        "method": "GET",
+        "path": "/email/check",
+        "description": "Verify if an email address is linked to phishing reports"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://api.phish.directory/domain/check?domain=google.com', { headers: { 'Authorization': 'Bearer YOUR_API_KEY' } }).then(res => res.json())",
+      "python": "import requests\nresponse = requests.get('https://api.phish.directory/domain/check', params={'domain': 'google.com'}, headers={'Authorization': 'Bearer YOUR_API_KEY'})",
+      "curl": "curl -X GET 'https://api.phish.directory/domain/check?domain=google.com' -H 'Authorization: Bearer YOUR_API_KEY'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Send a POST request to https://api.phish.directory/user/signup to create an account",
+      "Log in via https://api.phish.directory/user/login to obtain a JWT",
+      "Use the JWT in the Authorization header as 'Bearer YOUR_JWT' to make a GET request to https://api.phish.directory/domain/check"
+    ],
+    "authentication": {
+      "type": "API Key",
+      "description": "Include your API key in the Authorization header as 'Bearer YOUR_API_KEY' or as a query parameter for all requests."
+    },
+    "sdks": []
+  }
+}

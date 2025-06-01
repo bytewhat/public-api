@@ -7,7 +7,6 @@
   "category": "Animals",
   "auth": "none",
   "https": true,
-  "cors": true,
   "featured": false,
   "tags": ["dogs", "images", "breeds", "open-source"],
   "dateAdded": "2025-05-24",

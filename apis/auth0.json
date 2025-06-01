@@ -1,0 +1,75 @@
+{
+  "id": "auth0",
+  "name": "Auth0",
+  "description": "A cloud-based identity management API for secure authentication and authorization across web, mobile, IoT, and internal applications",
+  "website": "https://auth0.com",
+  "docs": "https://auth0.com/docs",
+  "category": "Authentication & Authorization",
+  "auth": "apiKey",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "authentication",
+    "authorization",
+    "identity",
+    "sso"
+  ],
+  "about": {
+    "overview": "Auth0 API, part of Okta’s identity platform, provides developers with tools for secure user authentication and authorization, supporting Single Sign-On (SSO), social login, passwordless authentication, and fine-grained authorization for applications and IoT devices.",
+    "features": [
+      "Single Sign-On (SSO) across multiple applications",
+      "Social login with over 30 providers (e.g., Google, Facebook)",
+      "Passwordless authentication via email, SMS, or biometrics",
+      "Fine-grained authorization (FGA) for access control"
+    ],
+    "useCases": [
+      "Securing web and mobile apps with user authentication",
+      "Implementing SSO for enterprise applications",
+      "Enabling passwordless login for IoT devices",
+      "Managing access control for APIs and microservices"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "POST",
+        "path": "/oauth/token",
+        "description": "Obtain an access token for authentication"
+      },
+      {
+        "method": "GET",
+        "path": "/userinfo",
+        "description": "Retrieve user profile information using an access token"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "const axios = require('axios');\naxios.post('https://YOUR_DOMAIN.auth0.com/oauth/token', { client_id: 'YOUR_CLIENT_ID', client_secret: 'YOUR_CLIENT_SECRET', grant_type: 'client_credentials' }, { headers: { 'content-type': 'application/json' } }).then(res => console.log(res.data));",
+      "python": "import requests\nresponse = requests.post('https://YOUR_DOMAIN.auth0.com/oauth/token', json={'client_id': 'YOUR_CLIENT_ID', 'client_secret': 'YOUR_CLIENT_SECRET', 'grant_type': 'client_credentials'})",
+      "curl": "curl -X POST https://YOUR_DOMAIN.auth0.com/oauth/token -H 'content-type: application/json' -d '{\"client_id\":\"YOUR_CLIENT_ID\",\"client_secret\":\"YOUR_CLIENT_SECRET\",\"grant_type\":\"client_credentials\"}'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Sign up at https://auth0.com/signup to create an account",
+      "Create an application in the Auth0 Dashboard to obtain client ID and secret",
+      "Make a POST request to https://YOUR_DOMAIN.auth0.com/oauth/token to get an access token"
+    ],
+    "authentication": {
+      "type": "OAuth",
+      "description": "Use OAuth 2.0 authentication by obtaining an access token with client ID and secret via the /oauth/token endpoint."
+    },
+    "sdks": [
+      {
+        "language": "JavaScript",
+        "name": "auth0",
+        "official": true
+      },
+      {
+        "language": "Python",
+        "name": "auth0-python",
+        "official": true
+      }
+    ]
+  }
+}

@@ -16,7 +16,7 @@ class ApiValidator {
     // Define the API schema
     this.apiSchema = {
       type: 'object',
-      required: ['id', 'name', 'description', 'website', 'category', 'auth', 'https', 'cors', 'dateAdded'],
+      required: ['id', 'name', 'description', 'website', 'category', 'auth', 'https', 'dateAdded'],
       properties: {
         id: { type: 'string', pattern: '^[a-z0-9-]+$' },
         name: { type: 'string', minLength: 1, maxLength: 100 },
@@ -26,7 +26,6 @@ class ApiValidator {
         category: { type: 'string', minLength: 1 },
         auth: { enum: ['apiKey', 'oauth', 'none'] },
         https: { type: 'boolean' },
-        cors: { type: 'boolean' },
         featured: { type: 'boolean' },
         tags: {
           type: 'array',

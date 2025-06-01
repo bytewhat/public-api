@@ -7,7 +7,6 @@
   "category": "Animals",
   "auth": "apiKey",
   "https": true,
-  "cors": true,
   "featured": false,
   "tags": ["pets", "adoption", "shelters", "animals"],
   "dateAdded": "2025-05-24",

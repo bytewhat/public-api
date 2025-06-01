@@ -1,0 +1,75 @@
+{
+  "id": "dymo",
+  "name": "Dymo",
+  "description": "An enterprise-grade REST API for real-time lead verification, fraud prevention, and data validation, with AI-driven analytics and cybersecurity features",
+  "website": "https://dymo.tpeoficial.com",
+  "docs": "https://docs.tpeoficial.com",
+  "category": "Anti-Malware",
+  "auth": "apiKey",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "security",
+    "fraud prevention",
+    "data validation",
+    "ai"
+  ],
+  "about": {
+    "overview": "Dymo API provides businesses with tools for real-time validation of emails, phone numbers, and identities, detecting disposable data, blocking fake users, and enhancing cybersecurity with AI-driven analytics and malware detection.",
+    "features": [
+      "Real-time email and phone number verification",
+      "Fraud detection for disposable data and fake users",
+      "AI-powered customer analytics and company size detection",
+      "Secure random generation for non-predictable outputs"
+    ],
+    "useCases": [
+      "Preventing free trial abuse in subscription platforms",
+      "Enhancing cybersecurity for web applications",
+      "Automating lead validation for marketing",
+      "Detecting large company registrations for targeted outreach"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "POST",
+        "path": "/v1/private/secure/verify",
+        "description": "Verify emails, phone numbers, ips, credit cards, domains, wallets, etc."
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://api.tpeoficial.com/v1/private/secure/verify', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer YOUR_API_KEY' }, body: JSON.stringify({ email: 'test@test.com', phone: '+34617509462', domain: 'test.com', creditCard: { pan: '5110929780543845', expirationDate: '01/2030', cvv: '123' }, ip: '52.94.236.248', wallet: '1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa' }) }).then(res => res.json())",
+      "python": "import requests\nimport json\ndata = {'email': 'test@test.com', 'phone': '+34617509462', 'domain': 'test.com', 'creditCard': {'pan': '5110929780543845', 'expirationDate': '01/2030', 'cvv': '123'}, 'ip': '52.94.236.248', 'wallet': '1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa'}\nresponse = requests.post('https://api.tpeoficial.com/v1/private/secure/verify', headers={'Content-Type': 'application/json', 'Authorization': 'Bearer YOUR_API_KEY'}, data=json.dumps(data))",
+      "curl": "curl -X POST https://api.tpeoficial.com/v1/private/secure/verify -H \"Content-Type: application/json\" -H \"Authorization: Bearer YOUR_API_KEY\" -d '{\"email\": \"test@test.com\", \"phone\": \"+34617509462\", \"domain\": \"test.com\", \"creditCard\": {\"pan\": \"5110929780543845\", \"expirationDate\": \"01/2030\", \"cvv\": \"123\"}, \"ip\": \"52.94.236.248\", \"wallet\": \"1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa\"}'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Sign up for an account at https://dymo.tpeoficial.com",
+      "Obtain an API key from https://dymo.tpeoficial.com/account",
+      "Make a GET request to https://api.tpeoficial.com/v1/private/secure/verify to start validating"
+    ],
+    "authentication": {
+      "type": "API Key",
+      "description": "Include your API key in the Authorization header as 'Bearer YOUR_API_KEY' for all requests."
+    },
+    "sdks": [
+      {
+        "language": "Node.js",
+        "name": "dymo-api",
+        "official": true
+      },
+      {
+        "language": "PHP",
+        "name": "tpeoficial/dymoapi",
+        "official": true
+      },
+      {
+        "language": "Python",
+        "name": "dymoapi",
+        "official": true
+      }
+    ]
+  }
+}

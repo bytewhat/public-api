@@ -38,15 +38,15 @@ class ReadmeGenerator {
   }
 
   generateApiTable(categoryApis) {
-    const header = '| API | Description | Auth | HTTPS | CORS |\n|---|---|---|---|---|\n';
+      const header = '| API | Description | Auth | HTTPS |\n|---|---|---|---|\n';
     
     const rows = categoryApis.map(api => {
       const authDisplay = api.auth === 'none' ? 'No' : 
                          api.auth === 'apiKey' ? '`apiKey`' : 
                          api.auth === 'oauth' ? '`OAuth`' : 
                          `\`${api.auth}\``;
-      
-      return `| [${api.name}](${api.website}) | ${api.description} | ${authDisplay} | ${api.https ? 'Yes' : 'No'} | ${api.cors ? 'Yes' : 'No'} |`;
+
+        return `| [${api.name}](${api.website}) | ${api.description} | ${authDisplay} | ${api.https ? 'Yes' : 'No'} |`;
     }).join('\n');
 
     return header + rows;

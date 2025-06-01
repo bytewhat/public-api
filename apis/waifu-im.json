@@ -1,0 +1,68 @@
+{
+  "id": "waifu-im",
+  "name": "Waifu.im",
+  "description": "A free REST API providing access to over 4,000 anime-style waifu images with versatile and NSFW tags, supporting favorites and image uploads",
+  "website": "https://www.waifu.im",
+  "docs": "https://docs.waifu.im",
+  "category": "Anime",
+  "auth": "apiKey",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "anime",
+    "waifu",
+    "images",
+    "nsfw"
+  ],
+  "about": {
+    "overview": "Waifu.im API provides developers with access to a large collection of anime-style waifu images, sortable by tags, with features like favorites management, image uploads, and fast response times averaging 200ms.",
+    "features": [
+      "Over 4,000 anime-style images",
+      "Versatile and NSFW tag filtering",
+      "User favorites and image upload support",
+      "Versioned API with Accept-Version header"
+    ],
+    "useCases": [
+      "Building anime-themed Discord bots",
+      "Creating waifu galleries for websites",
+      "Integrating anime images into mobile apps",
+      "Enhancing social media with dynamic images"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/search",
+        "description": "Retrieve random waifu images with optional tag and NSFW filters"
+      },
+      {
+        "method": "GET",
+        "path": "/tags",
+        "description": "List all available tags for filtering images"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://api.waifu.im/search?included_tags=maid', { headers: { 'Accept-Version': 'v5' } }).then(res => res.json())",
+      "python": "import requests\nresponse = requests.get('https://api.waifu.im/search', headers={'Accept-Version': 'v5'}, params={'included_tags': 'maid'})",
+      "curl": "curl -X GET 'https://api.waifu.im/search?included_tags=maid' -H 'Accept-Version: v5'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Visit https://docs.waifu.im for detailed documentation",
+      "Make a GET request to https://api.waifu.im/search to fetch images",
+      "Use an auth token from https://www.waifu.im/dashboard for favorites endpoints"
+    ],
+    "rateLimit": {
+      "requests": 1,
+      "period": "per 200ms"
+    },
+    "authentication": {
+      "type": "Bearer Token",
+      "description": "Include a Bearer token in the Authorization header for endpoints requiring authentication, obtainable from https://www.waifu.im/dashboard."
+    },
+    "sdks": []
+  }
+}

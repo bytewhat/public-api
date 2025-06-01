@@ -1,0 +1,64 @@
+{
+  "id": "omg-img",
+  "name": "OMG-IMG",
+  "description": "A URL-based API for generating over 170,000 icons in various styles, sizes, and colors, designed for easy integration into web and design projects",
+  "website": "https://img.icons8.com",
+  "docs": "https://img.icons8.com/",
+  "category": "Art & Design",
+  "auth": "none",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "icons",
+    "design",
+    "vector",
+    "graphics"
+  ],
+  "about": {
+    "overview": "OMG-IMG API, provided by Icons8, allows developers to generate icons directly via URLs, supporting over 170,000 icons in multiple styles and formats, with customizable sizes and colors, ideal for web, mobile, and design applications. Attribution or a paid license is required for use.",
+    "features": [
+      "Generate icons using URLs with style, size, and color parameters",
+      "Access over 170,000 icons in 80+ design styles",
+      "Support for PNG and SVG formats",
+      "Free usage with attribution or paid license for commercial use"
+    ],
+    "useCases": [
+      "Embedding icons in web and mobile applications",
+      "Enhancing design tutorials with dynamic icon generation",
+      "Creating consistent visual assets for UI/UX design",
+      "Integrating icons into educational or open-source projects"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/{style}/{size}/{icon}",
+        "description": "Generate an icon by specifying style, size, and icon name"
+      },
+      {
+        "method": "GET",
+        "path": "/{style}/{size}/{icon}/{color}",
+        "description": "Generate an icon with a specific color using hex code"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "const img = document.createElement('img'); img.src = 'https://img.icons8.com/ios/50/search'; document.body.appendChild(img);",
+      "python": "import requests\nresponse = requests.get('https://img.icons8.com/ios/50/search'); open('icon.png', 'wb').write(response.content)",
+      "curl": "curl -o icon.png https://img.icons8.com/ios/50/search"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Visit https://img.icons8.com/ for icon styles and parameters",
+      "Use a URL like https://img.icons8.com/ios/50/search to generate an icon",
+      "Add a backlink to https://icons8.com or purchase a license for commercial use"
+    ],
+    "authentication": {
+      "type": "None",
+      "description": "No authentication required for basic usage; attribution to https://icons8.com is required for free use, or a paid license for commercial applications."
+    },
+    "sdks": []
+  }
+}

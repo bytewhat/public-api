@@ -1,0 +1,64 @@
+{
+  "id": "getotp",
+  "name": "GetOTP",
+  "description": "A REST API for implementing secure one-time password (OTP) verification flows via SMS, email, or voice channels, with customizable UI and reCAPTCHA integration",
+  "website": "https://otp.dev",
+  "docs": "https://otp.dev/en/docs/",
+  "category": "Authentication & Authorization",
+  "auth": "apiKey",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "otp",
+    "authentication",
+    "verification",
+    "security"
+  ],
+  "about": {
+    "overview": "GetOTP API simplifies one-time password verification for developers, offering multi-channel OTP delivery (SMS, email, voice) with built-in retry logic, reCAPTCHA, and customizable redirect flows for seamless user authentication.",
+    "features": [
+      "Multi-channel OTP via SMS, email, or voice",
+      "reCAPTCHA integration for anti-abuse protection",
+      "Customizable UI with embed modes (compact, full)",
+      "Callback and redirect URLs for verification status"
+    ],
+    "useCases": [
+      "Securing user logins with two-factor authentication",
+      "Verifying phone numbers or emails for account creation",
+      "Enhancing payment confirmation with OTP",
+      "Integrating OTP flows into web or mobile apps"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "POST",
+        "path": "/api/verify/",
+        "description": "Initiate an OTP verification process for a specified channel and contact"
+      },
+      {
+        "method": "GET",
+        "path": "/api/verify/{otp_id}/",
+        "description": "Check the status of an OTP verification by ID"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://otp.dev/api/verify/', { method: 'POST', headers: { 'Authorization': 'Basic ' + btoa('YOUR_API_KEY:YOUR_API_TOKEN') }, body: new FormData({ channel: 'sms', phone_sms: '+60123456789' }) }).then(res => res.json())",
+      "python": "import requests\nresponse = requests.post('https://otp.dev/api/verify/', auth=('YOUR_API_KEY', 'YOUR_API_TOKEN'), data={'channel': 'sms', 'phone_sms': '+60123456789'})",
+      "curl": "curl -L -X POST 'https://otp.dev/api/verify/' -u 'YOUR_API_KEY:YOUR_API_TOKEN' -F 'channel=\"sms\"' -F 'phone_sms=\"+60123456789\"'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Register at https://otp.dev to obtain API key and token",
+      "Make a POST request to https://otp.dev/api/verify/ with channel and contact details",
+      "Redirect users to the provided verification link to complete OTP entry"
+    ],
+    "authentication": {
+      "type": "Basic",
+      "description": "Use Basic HTTP authentication with your API key and token, provided in the format 'Authorization: Basic <base64(API_KEY:API_TOKEN)>'."
+    },
+    "sdks": []
+  }
+}

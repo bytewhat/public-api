@@ -7,7 +7,6 @@
   "category": "Animals",
   "auth": "none",
   "https": true,
-  "cors": true,
   "featured": false,
   "tags": ["cats", "images", "gifs", "fun", "random"],
   "dateAdded": "2025-05-24",

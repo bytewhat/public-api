@@ -1,0 +1,64 @@
+{
+  "id": "iconfinder",
+  "name": "Iconfinder",
+  "description": "A REST JSON API for accessing a vast library of icons, icon sets, categories, and author details for design and development projects",
+  "website": "https://www.iconfinder.com",
+  "docs": "https://developer.iconfinder.com/reference/overview-1",
+  "category": "Art & Design",
+  "auth": "apiKey",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "icons",
+    "design",
+    "vector",
+    "art"
+  ],
+  "about": {
+    "overview": "Iconfinder API provides programmatic access to millions of icons and icon sets, enabling designers and developers to search, retrieve, and integrate high-quality vector and raster icons into applications, with support for CORS and detailed metadata.",
+    "features": [
+      "Search and filter icons by query, tags, or categories",
+      "Access detailed icon and icon set metadata",
+      "Support for vector and raster formats",
+      "Cross-Origin Resource Sharing (CORS) for AJAX requests"
+    ],
+    "useCases": [
+      "Integrating icons into web and mobile applications",
+      "Enhancing design workflows with automated icon retrieval",
+      "Building icon marketplaces or galleries",
+      "Supporting creative projects with vector graphics"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/v4/icons/search",
+        "description": "Search for icons by query string and filter parameters"
+      },
+      {
+        "method": "GET",
+        "path": "/v4/iconsets/{iconset_id}",
+        "description": "Retrieve details about a specific icon set"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://api.iconfinder.com/v4/icons/search?query=arrow', { headers: { 'Authorization': 'Bearer YOUR_API_KEY' } }).then(res => res.json())",
+      "python": "import requests\nresponse = requests.get('https://api.iconfinder.com/v4/icons/search', params={'query': 'arrow'}, headers={'Authorization': 'Bearer YOUR_API_KEY'})",
+      "curl": "curl -X GET 'https://api.iconfinder.com/v4/icons/search?query=arrow' -H 'Authorization: Bearer YOUR_API_KEY'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Create an application at https://www.iconfinder.com/account to get an API key",
+      "Include the API key in the Authorization header as 'Bearer YOUR_API_KEY'",
+      "Make a GET request to https://api.iconfinder.com/v4/icons/search to search for icons"
+    ],
+    "authentication": {
+      "type": "API Key",
+      "description": "Include your API key in the Authorization header as 'Bearer YOUR_API_KEY' for all requests."
+    },
+    "sdks": []
+  }
+}

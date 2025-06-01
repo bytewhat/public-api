@@ -7,7 +7,6 @@
   "category": "Development",
   "auth": "oauth",
   "https": true,
-  "cors": true,
   "featured": false,
   "tags": ["git", "version-control", "repositories", "issues", "open-source"],
   "dateAdded": "2025-05-24",

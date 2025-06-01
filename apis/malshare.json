@@ -1,0 +1,89 @@
+{
+  "id": "malshare",
+  "name": "MalShare",
+  "description": "A community-driven REST API providing access to malware samples, hashes, and sources for cybersecurity research and analysis",
+  "website": "https://malshare.com",
+  "docs": "https://malshare.com/doc.php",
+  "category": "Anti-Malware",
+  "auth": "apiKey",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "malware",
+    "cybersecurity",
+    "threat intelligence",
+    "samples"
+  ],
+  "about": {
+    "overview": "MalShare API is a community-driven platform that provides free access to malware samples, hashes, and sources, enabling researchers and developers to search, upload, and download malware data for cybersecurity analysis.",
+    "features": [
+      "Search malware by hashes, sources, or file names",
+      "Download malware samples using hashes",
+      "Upload new malware samples to the repository",
+      "Daily feeds of hashes and file types"
+    ],
+    "useCases": [
+      "Conducting malware research and analysis",
+      "Integrating threat intelligence into security tools",
+      "Automating malware sample retrieval for testing",
+      "Building machine learning models for malware detection"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/api.php?action=getlist",
+        "description": "List MD5 hashes from the past 24 hours"
+      },
+      {
+        "method": "POST",
+        "path": "/api.php?action=upload",
+        "description": "Upload a malware sample to the MalShare repository"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://malshare.com/api.php?api_key=YOUR_API_KEY&action=getlist').then(res => res.json())",
+      "python": "import requests\nresponse = requests.get('https://malshare.com/api.php', params={'api_key': 'YOUR_API_KEY', 'action': 'getlist'})",
+      "curl": "curl -X GET 'https://malshare.com/api.php?api_key=YOUR_API_KEY&action=getlist'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Register for a free public API key at https://malshare.com/register.php",
+      "Use the API key in requests to https://malshare.com/api.php",
+      "Make a GET request to https://malshare.com/api.php?action=getlist to retrieve recent hashes"
+    ],
+    "rateLimit": {
+      "requests": 2000,
+      "period": "per day"
+    },
+    "authentication": {
+      "type": "API Key",
+      "description": "Include your API key as a query parameter 'api_key=YOUR_API_KEY' in all requests."
+    },
+    "sdks": [
+      {
+        "language": "C#",
+        "name": "MalShare.NET",
+        "official": false
+      },
+      {
+        "language": "Python",
+        "name": "MalShare-Toolkit",
+        "official": false
+      },
+      {
+        "language": "Go",
+        "name": "gomalshare",
+        "official": false
+      },
+      {
+        "language": "Java",
+        "name": "MalShareApi",
+        "official": false
+      }
+    ]
+  }
+}

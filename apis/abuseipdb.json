@@ -1,0 +1,68 @@
+{
+  "id": "abuseipdb",
+  "name": "AbuseIPDB",
+  "description": "A REST API for reporting and checking IP addresses involved in malicious activities such as hacking, spamming, and DDoS attacks",
+  "website": "https://www.abuseipdb.com",
+  "docs": "https://docs.abuseipdb.com",
+  "category": "Anti-Malware",
+  "auth": "apiKey",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "security",
+    "ip",
+    "threat intelligence",
+    "abuse"
+  ],
+  "about": {
+    "overview": "AbuseIPDB API enables webmasters and system administrators to report and check IP addresses for malicious activities, providing data like abuse confidence scores and report histories to enhance network security.",
+    "features": [
+      "Check IP reputation with abuse confidence scores",
+      "Report malicious IPs with categorized abuse types",
+      "Integration with tools like Fail2Ban and FortiSOAR",
+      "Support for IPv4 and IPv6 addresses"
+    ],
+    "useCases": [
+      "Blocking malicious IPs in network security",
+      "Automating threat detection with SIEM tools",
+      "Enhancing firewall rules with blacklist data",
+      "Investigating suspicious IP activity"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/api/v2/check",
+        "description": "Check the report history and abuse confidence score for a specific IP"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v2/report",
+        "description": "Report an IP address for malicious activity with specified categories"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://api.abuseipdb.com/api/v2/check?ipAddress=118.25.6.39&maxAgeInDays=90', { headers: { 'Key': 'YOUR_API_KEY', 'Accept': 'application/json' } }).then(res => res.json())",
+      "python": "import requests\nresponse = requests.get('https://api.abuseipdb.com/api/v2/check', params={'ipAddress': '118.25.6.39', 'maxAgeInDays': '90'}, headers={'Key': 'YOUR_API_KEY', 'Accept': 'application/json'})",
+      "curl": "curl -G https://api.abuseipdb.com/api/v2/check --data-urlencode 'ipAddress=118.25.6.39' -d maxAgeInDays=90 -H 'Key: YOUR_API_KEY' -H 'Accept: application/json'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Register for a free account at https://www.abuseipdb.com/register",
+      "Obtain an API key from the account dashboard at https://www.abuseipdb.com/account",
+      "Make a GET request to https://api.abuseipdb.com/api/v2/check to check an IP"
+    ],
+    "rateLimit": {
+      "requests": 1000,
+      "period": "per day"
+    },
+    "authentication": {
+      "type": "API Key",
+      "description": "Include your API key in the 'Key' header or as a query parameter for all requests."
+    },
+    "sdks": []
+  }
+}

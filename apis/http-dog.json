@@ -1,0 +1,64 @@
+{
+  "id": "http-dog",
+  "name": "HTTP Status Dogs",
+  "description": "A free API providing dog images for HTTP status codes to enhance error messages on websites",
+  "website": "https://http.dog",
+  "docs": "https://http.dog",
+  "category": "Animals",
+  "auth": "none",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "http",
+    "dogs",
+    "status codes",
+    "api"
+  ],
+  "about": {
+    "overview": "HTTP Status Dogs API offers dog images corresponding to HTTP status codes, making error handling visually engaging for developers.",
+    "features": [
+      "Supports multiple formats (JPG, WEBP, AVIF, JXL, JSON)",
+      "No authentication required",
+      "Covers a wide range of HTTP status codes",
+      "Simple and lightweight"
+    ],
+    "useCases": [
+      "Enhancing website error pages",
+      "Educational tool for learning HTTP status codes",
+      "Debugging and testing API responses",
+      "Adding fun visuals to applications"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/[code].jpg",
+        "description": "Retrieve a dog image for a specific HTTP status code"
+      },
+      {
+        "method": "GET",
+        "path": "/[code].json",
+        "description": "Retrieve JSON data for a specific HTTP status code"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://http.dog/200.jpg').then(res => res.blob())",
+      "python": "import requests\nresponse = requests.get('https://http.dog/200.jpg')",
+      "curl": "curl -X GET https://http.dog/200.jpg"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Visit https://http.dog/[code].jpg with a valid HTTP status code",
+      "Optionally use .webp, .avif, .jxl, or .json extensions",
+      "Integrate the image or JSON directly into your application"
+    ],
+    "authentication": {
+      "type": "None",
+      "description": "No authentication required; access endpoints directly."
+    },
+    "sdks": []
+  }
+}

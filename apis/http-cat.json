@@ -1,0 +1,58 @@
+{
+  "id": "http-cat",
+  "name": "HTTP Cat",
+  "description": "A playful API providing images of cats representing HTTP status codes",
+  "website": "https://http.cat",
+  "docs": "https://http.cat",
+  "category": "Animals",
+  "auth": "none",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "http",
+    "cats",
+    "status codes",
+    "fun"
+  ],
+  "about": {
+    "overview": "HTTP Cat API provides images of cats that correspond to HTTP status codes, making error handling more delightful.",
+    "features": [
+      "Simple image-based responses",
+      "Covers common HTTP status codes",
+      "No authentication required",
+      "Lightweight and easy to use"
+    ],
+    "useCases": [
+      "Adding humor to error pages",
+      "Educational tool for HTTP status codes",
+      "Fun API for developers"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/{status_code}",
+        "description": "Retrieve a cat image for a specific HTTP status code"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://http.cat/200').then(res => res.blob())",
+      "python": "import requests\nresponse = requests.get('https://http.cat/200')",
+      "curl": "curl -X GET https://http.cat/200"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Visit https://http.cat/{status_code} with any valid HTTP status code",
+      "Use the image URL directly in your application",
+      "No API key required"
+    ],
+    "authentication": {
+      "type": "None",
+      "description": "No authentication required; simply access the image URLs."
+    },
+    "sdks": []
+  }
+}

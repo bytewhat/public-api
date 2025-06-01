@@ -1,0 +1,64 @@
+{
+  "id": "emojihub",
+  "name": "EmojiHub",
+  "description": "A simple HTTP API providing access to a database of 1,791 emojis, sorted by categories and groups, for integration into creative applications",
+  "website": "https://github.com/cheatsnake/emojihub",
+  "docs": "https://github.com/cheatsnake/emojihub",
+  "category": "Art & Design",
+  "auth": "none",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "emojis",
+    "design",
+    "visual",
+    "api"
+  ],
+  "about": {
+    "overview": "EmojiHub API, developed by cheatsnake, offers a free and lightweight way to access 1,791 emojis, organized by categories and groups, with endpoints for random selection, filtered lists, and full database retrieval, ideal for enhancing web and mobile applications with expressive visuals.",
+    "features": [
+      "Access to 1,791 emojis with HTML and Unicode codes",
+      "Retrieve random emojis or filter by category/group",
+      "No authentication required for API access",
+      "Built with Go for fast and lightweight performance"
+    ],
+    "useCases": [
+      "Enhancing chat applications with emoji integration",
+      "Building emoji pickers for web or mobile apps",
+      "Creating emoji-based visualizations or games",
+      "Adding expressive visuals to social media platforms"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/api/random",
+        "description": "Retrieve a random emoji from the database"
+      },
+      {
+        "method": "GET",
+        "path": "/api/all",
+        "description": "Fetch all emojis or filter by category or group"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://emojihub.yurace.pro/api/random').then(res => res.json())",
+      "python": "import requests\nresponse = requests.get('https://emojihub.yurace.pro/api/random')",
+      "curl": "curl -X GET https://emojihub.yurace.pro/api/random"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Visit https://github.com/cheatsnake/emojihub for API details",
+      "Make a GET request to https://emojihub.yurace.pro/api/random to fetch a random emoji",
+      "Use parameters like 'category' or 'group' with /api/all to filter emojis"
+    ],
+    "authentication": {
+      "type": "None",
+      "description": "No authentication required; simply make GET requests to access emoji data."
+    },
+    "sdks": []
+  }
+}

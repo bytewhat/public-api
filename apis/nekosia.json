@@ -1,0 +1,76 @@
+{
+  "id": "nekosia",
+  "name": "Nekosia",
+  "description": "A free Anime API providing access to a vast collection of SFW anime images, including catgirls, foxgirls, and more, with features like dominant color data and session-based image retrieval",
+  "website": "https://nekosia.cat",
+  "docs": "https://nekosia.cat/documentation",
+  "category": "Anime",
+  "auth": "none",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "anime",
+    "catgirl",
+    "foxgirl",
+    "booru",
+    "images"
+  ],
+  "about": {
+    "overview": "Nekosia API offers a free, CORS-free solution for developers to integrate high-quality, SFW anime images into apps, Discord bots, or websites, with support for categories like catgirls and foxgirls, and detailed metadata including dominant colors.",
+    "features": [
+      "Extensive SFW anime image collection",
+      "Session-based image retrieval to avoid duplicates",
+      "Dominant color data for visual customization",
+      "CORS-free and high-performance API",
+      "Community-driven Booru for browsing and rating images"
+    ],
+    "useCases": [
+      "Enhancing Discord bots with anime images",
+      "Building anime-themed websites or apps",
+      "Creating visual content for social media",
+      "Educational tools for anime art analysis"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/api/v1/images/catgirl",
+        "description": "Retrieve a random catgirl image"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/images/random",
+        "description": "Fetch random images"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "const { NekosiaAPI } = require('nekosia.js');\n(async () => { const response = await NekosiaAPI.fetchCategoryImages('catgirl'); console.log(response.image.original); })();",
+      "python": "from anime_api.apis import NekosiaAPI\nnekos = NekosiaAPI()\nnekos.get_cat_girl()\nprint(nekos.url)",
+      "curl": "curl -X GET https://api.nekosia.cat/api/v1/images/catgirl"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Visit https://nekosia.cat/documentation for API details",
+      "Make a GET request to https://api.nekosia.cat/api/v1/images/catgirl",
+      "Use session parameters to avoid duplicate images"
+    ],
+    "rateLimit": {
+      "requests": 320,
+      "period": "5 minutes"
+    },
+    "authentication": {
+      "type": "None",
+      "description": "No authentication required; access endpoints directly."
+    },
+    "sdks": [
+      {
+        "language": "JavaScript",
+        "name": "nekosia.js",
+        "official": true
+      }
+    ]
+  }
+}

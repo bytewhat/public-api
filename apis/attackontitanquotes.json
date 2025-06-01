@@ -1,0 +1,59 @@
+{
+  "id": "attackontitanquotes",
+  "name": "Attack on Titan Quotes",
+  "description": "A simple API providing inspirational and iconic quotes from the Attack on Titan anime series",
+  "website": "https://attackontitanquotes.vercel.app",
+  "docs": "https://attackontitanquotes.vercel.app",
+  "category": "Anime",
+  "auth": "none",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "anime",
+    "attack on titan",
+    "quotes",
+    "inspiration"
+  ],
+  "about": {
+    "overview": "Attack on Titan Quotes API delivers a collection of memorable quotes from the popular anime series, ideal for fans and developers looking to integrate thematic content into applications or websites.",
+    "features": [
+      "Random quote retrieval",
+      "Quotes from key characters",
+      "Simple and lightweight API",
+      "Hosted on Vercel for reliability"
+    ],
+    "useCases": [
+      "Enhancing fan websites with dynamic quotes",
+      "Building Discord bots for anime communities",
+      "Creating motivational apps with anime themes",
+      "Educational tools for anime culture studies"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/quote",
+        "description": "Retrieve a random quote from Attack on Titan"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://aot-api.vercel.app/quote').then(res => res.json())",
+      "python": "import requests\nresponse = requests.get('https://aot-api.vercel.app/quote')",
+      "curl": "curl -X GET https://aot-api.vercel.app/quote"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Visit https://attackontitanquotes.vercel.app to explore quotes",
+      "Make a GET request to https://aot-api.vercel.app/quote",
+      "Integrate quotes into your application or website"
+    ],
+    "authentication": {
+      "type": "None",
+      "description": "No authentication required; access endpoints directly."
+    },
+    "sdks": []
+  }
+}

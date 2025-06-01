@@ -7,7 +7,6 @@
     "category": "Blockchain",
     "auth": "apiKey",
     "https": true,
-    "cors": true,
     "featured": false,
     "tags": ["blockchain", "web3", "crypto", "nft", "wallet"],
     "dateAdded": "2025-05-24",

@@ -1,0 +1,68 @@
+{
+  "id": "jikan",
+  "name": "Jikan",
+  "description": "An unofficial MyAnimeList REST API providing access to a comprehensive database of anime and manga, including search, character, and schedule data",
+  "website": "https://jikan.moe",
+  "docs": "https://docs.api.jikan.moe/",
+  "category": "Anime",
+  "auth": "none",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "anime",
+    "manga",
+    "myanimelist",
+    "rest"
+  ],
+  "about": {
+    "overview": "Jikan API is an open-source, unofficial MyAnimeList REST API that provides developers with easy access to anime and manga data, including details on titles, characters, staff, and schedules, without requiring authentication.",
+    "features": [
+      "Comprehensive anime and manga database",
+      "Search with advanced filters and pagination",
+      "Seasonal and schedule data for anime",
+      "Open-source with community contributions"
+    ],
+    "useCases": [
+      "Building anime recommendation apps",
+      "Creating anime/manga tracking tools",
+      "Developing Discord bots for anime communities",
+      "Analyzing anime and manga trends"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/v4/anime",
+        "description": "Search for anime with optional query parameters"
+      },
+      {
+        "method": "GET",
+        "path": "/v4/anime/{id}",
+        "description": "Retrieve detailed information for a specific anime by ID"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://api.jikan.moe/v4/anime?q=naruto').then(res => res.json())",
+      "python": "import requests\nresponse = requests.get('https://api.jikan.moe/v4/anime?q=naruto')",
+      "curl": "curl -X GET https://api.jikan.moe/v4/anime?q=naruto"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Visit https://docs.api.jikan.moe/ for API documentation",
+      "Make a GET request to https://api.jikan.moe/v4/anime",
+      "Parse the JSON response to integrate data into your application"
+    ],
+    "rateLimit": {
+      "requests": 3,
+      "period": "per second"
+    },
+    "authentication": {
+      "type": "None",
+      "description": "No authentication required; access endpoints directly."
+    },
+    "sdks": []
+  }
+}

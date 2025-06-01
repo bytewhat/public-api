@@ -7,7 +7,6 @@
   "category": "Blockchain",
   "auth": "apiKey",
   "https": true,
-  "cors": true,
   "featured": false,
   "tags": ["ethereum", "blockchain", "transactions", "smart-contracts", "evm"],
   "dateAdded": "2025-05-24",

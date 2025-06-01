@@ -7,7 +7,6 @@
   "category": "Weather",
   "auth": "apiKey",
   "https": true,
-  "cors": true,
   "featured": false,
   "tags": ["weather", "forecast", "climate", "meteorology", "geolocation"],
   "dateAdded": "2025-05-24",

@@ -1,0 +1,64 @@
+{
+  "id": "colourlovers",
+  "name": "COLOURlovers",
+  "description": "A REST API for accessing over 10 million colors, 4.9 million palettes, and 6 million patterns for creative design projects",
+  "website": "https://www.colourlovers.com",
+  "docs": "https://www.colourlovers.com/api",
+  "category": "Art & Design",
+  "auth": "none",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "colors",
+    "palettes",
+    "patterns",
+    "design"
+  ],
+  "about": {
+    "overview": "COLOURlovers API provides developers with access to a vast community-driven database of colors, palettes, and patterns, enabling integration into design tools, applications, and creative projects, with support for JSON and XML formats.",
+    "features": [
+      "Search over 10 million colors by hex, keywords, or hue",
+      "Access 4.9 million user-created color palettes",
+      "Retrieve 6 million patterns with associated colors",
+      "Support for JSON and XML response formats"
+    ],
+    "useCases": [
+      "Integrating color palettes into design applications",
+      "Building theme editors for websites or apps",
+      "Creating visualizations with community-rated colors",
+      "Enhancing creative workflows with pattern data"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/api/colors",
+        "description": "Search for multiple colors by keywords, hue, or sorting options"
+      },
+      {
+        "method": "GET",
+        "path": "/api/palettes",
+        "description": "Retrieve color palettes with filters like keywords or creator"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://www.colourlovers.com/api/colors?keywords=blue&format=json').then(res => res.json())",
+      "python": "import requests\nresponse = requests.get('https://www.colourlovers.com/api/colors', params={'keywords': 'blue', 'format': 'json'})",
+      "curl": "curl -X GET 'https://www.colourlovers.com/api/colors?keywords=blue&format=json'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Visit https://www.colourlovers.com/api for endpoint details",
+      "Make a GET request to https://www.colourlovers.com/api/colors to search colors",
+      "Use parameters like 'keywords' or 'format=json' to customize responses"
+    ],
+    "authentication": {
+      "type": "None",
+      "description": "No authentication required for most endpoints; simply make GET requests to access data."
+    },
+    "sdks": []
+  }
+}

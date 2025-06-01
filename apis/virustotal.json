@@ -1,0 +1,67 @@
+{
+  "id": "virustotal",
+  "name": "VirusTotal",
+  "description": "A REST API for scanning files, URLs, domains, and IP addresses for malware, leveraging over 70 antivirus engines and blocklisting services",
+  "website": "https://www.virustotal.com",
+  "docs": "https://docs.virustotal.com/reference/overview",
+  "category": "Anti-Malware",
+  "auth": "apiKey",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "malware",
+    "cybersecurity",
+    "threat intelligence",
+    "scanning"
+  ],
+  "about": {
+    "overview": "VirusTotal API enables developers to scan files, URLs, domains, and IP addresses for malicious content, providing detailed reports from multiple antivirus engines and community contributions, with integrations for SIEM and SOAR platforms.",
+    "features": [
+      "Scanning with over 70 antivirus engines",
+      "Real-time URL and file analysis",
+      "Community-driven comments and voting",
+      "Integration with tools like Splunk and Palo Alto Cortex XSOAR"
+    ],
+    "useCases": [
+      "Automating malware detection in security workflows",
+      "Enriching threat intelligence for SIEM platforms",
+      "Verifying URLs and files for phishing or malware",
+      "Researching Indicators of Compromise (IoCs)"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "POST",
+        "path": "/api/v3/files",
+        "description": "Upload and scan a file for malicious content"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v3/urls",
+        "description": "Submit and scan a URL for potential threats"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://www.virustotal.com/api/v3/urls', { method: 'POST', headers: { 'x-apikey': 'YOUR_API_KEY' }, body: new URLSearchParams({ 'url': 'https://example.com' }) }).then(res => res.json())",
+      "python": "import requests\nresponse = requests.post('https://www.virustotal.com/api/v3/urls', headers={'x-apikey': 'YOUR_API_KEY'}, data={'url': 'https://example.com'})",
+      "curl": "curl -X POST 'https://www.virustotal.com/api/v3/urls' -H 'x-apikey: YOUR_API_KEY' --data-urlencode 'url=https://example.com'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Sign up for a VirusTotal Community account at https://www.virustotal.com",
+      "Obtain your API key from the personal settings section",
+      "Make a POST request to https://www.virustotal.com/api/v3/files to scan a file"
+    ],
+    "rateLimit": {
+      "requests": 4,
+      "period": "per minute"
+    },
+    "authentication": {
+      "type": "API Key",
+      "description": "Include your API key in the 'x-apikey' header for all requests."
+    }
+  }
+}

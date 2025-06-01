@@ -1,0 +1,64 @@
+{
+  "id": "waifu-pics",
+  "name": "Waifu.pics",
+  "description": "A user-contributed REST API providing access to a large database of anime images, including SFW and NSFW categories like waifu, neko, and more",
+  "website": "https://waifu.pics",
+  "docs": "https://waifu.pics/docs",
+  "category": "Anime",
+  "auth": "none",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "anime",
+    "waifu",
+    "images",
+    "nsfw"
+  ],
+  "about": {
+    "overview": "Waifu.pics API is a user-curated platform for accessing a diverse collection of anime images, supporting both SFW and NSFW categories, with simple endpoints for fetching single or multiple images.",
+    "features": [
+      "User-contributed image database",
+      "Supports SFW and NSFW categories (e.g., waifu, neko, bully)",
+      "No authentication required",
+      "Bulk image retrieval (up to 30 images)"
+    ],
+    "useCases": [
+      "Building anime-themed Discord bots",
+      "Creating waifu galleries for websites",
+      "Enhancing social media with anime images",
+      "Integrating into anime fan applications"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/{type}/{category}",
+        "description": "Retrieve a single image from a specific category (e.g., sfw/waifu)"
+      },
+      {
+        "method": "GET",
+        "path": "/{type}/many/{category}",
+        "description": "Fetch up to 30 images from a specific category"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://waifu.pics/api/sfw/waifu').then(res => res.json()).then(data => console.log(data.url))",
+      "python": "import requests\nresponse = requests.get('https://waifu.pics/api/sfw/waifu')\nprint(response.json()['url'])",
+      "curl": "curl -X GET https://waifu.pics/api/sfw/waifu"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Visit https://waifu.pics/docs for endpoint details",
+      "Make a GET request to https://waifu.pics/api/sfw/waifu for a single image",
+      "Use https://waifu.pics/api/many/sfw/waifu for multiple images"
+    ],
+    "authentication": {
+      "type": "None",
+      "description": "No authentication required; access endpoints directly."
+    },
+    "sdks": []
+  }
+}

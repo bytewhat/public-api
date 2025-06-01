@@ -1,0 +1,79 @@
+{
+  "id": "anilist",
+  "name": "AniList",
+  "description": "A GraphQL API for accessing a comprehensive database of anime and manga, including characters, staff, and airing data",
+  "website": "https://anilist.co",
+  "docs": "https://docs.anilist.co",
+  "category": "Anime",
+  "auth": "oauth",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "anime",
+    "manga",
+    "graphql",
+    "entertainment"
+  ],
+  "about": {
+    "overview": "AniList API provides access to over 20,000 anime and 100,000 manga entries, powering AniList and AniChart with data on characters, staff, and airing schedules.",
+    "features": [
+      "GraphQL-based queries",
+      "Extensive anime and manga database",
+      "User list management",
+      "Social and recommendation features"
+    ],
+    "useCases": [
+      "Tracking anime and manga progress",
+      "Building custom anime/manga apps",
+      "Analyzing anime/manga trends",
+      "Integrating with third-party tools"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "POST",
+        "path": "/graphql",
+        "description": "Query anime details by ID or title"
+      },
+      {
+        "method": "POST",
+        "path": "/graphql",
+        "description": "Update user’s anime or manga list"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://graphql.anilist.co', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ query: '{ Media(id: 1) { title { romaji } } }') }).then(res => res.json())",
+      "python": "import requests\nresponse = requests.post('https://graphql.anilist.co', json={'query': '{ Media(id: 1) { title { romaji } } }'})",
+      "curl": "curl -X POST https://graphql.anilist.co -H 'Content-Type: application/json' -d '{\"query\": \"{ Media(id: 1) { title { romaji } } }\"}'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Register for an account at anilist.co",
+      "Obtain an OAuth token via the AniList API",
+      "Send GraphQL queries to https://graphql.anilist.co"
+    ],
+    "rateLimit": {
+      "requests": 30,
+      "period": "per minute"
+    },
+    "authentication": {
+      "type": "OAuth",
+      "description": "Use OAuth 2.0 to authenticate requests; include token in the Authorization header as 'Bearer YOUR_TOKEN'"
+    },
+    "sdks": [
+      {
+        "language": "JavaScript",
+        "name": "anilist-node",
+        "official": false
+      },
+      {
+        "language": "Python",
+        "name": "AnilistPython",
+        "official": false
+      }
+    ]
+  }
+}

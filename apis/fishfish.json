@@ -1,0 +1,80 @@
+{
+  "id": "fishfish",
+  "name": "FishFish",
+  "description": "A REST API focused on cybersecurity, providing resources for early detection of phishing domains and URLs to enhance safety across Discord communities",
+  "website": "https://fishfish.gg",
+  "docs": "https://api.fishfish.gg/docs/",
+  "category": "Anti-Malware",
+  "auth": "apiKey",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "phishing",
+    "cybersecurity",
+    "discord",
+    "threat intelligence"
+  ],
+  "about": {
+    "overview": "FishFish API is a volunteer-driven cybersecurity project that provides developers with tools to detect phishing domains and URLs, offering real-time updates via WebSocket and integration with Discord for scam prevention.",
+    "features": [
+      "Early detection of phishing domains and URLs",
+      "WebSocket feed for live database updates",
+      "API key authentication for anti-abuse measures",
+      "Community-driven data contributions"
+    ],
+    "useCases": [
+      "Enhancing Discord bot security with phishing detection",
+      "Automating threat intelligence for web applications",
+      "Monitoring and blocking malicious domains",
+      "Integrating real-time phishing data into cybersecurity tools"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/v1/domains",
+        "description": "Retrieve a list of known phishing domains"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/urls/check",
+        "description": "Check if a specific URL is associated with phishing activity"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://api.fishfish.gg/v1/domains', { headers: { 'Authorization': 'YOUR_API_KEY' } }).then(res => res.json())",
+      "python": "import requests\nresponse = requests.get('https://api.fishfish.gg/v1/domains', headers={'Authorization': 'YOUR_API_KEY'})",
+      "curl": "curl -X GET https://api.fishfish.gg/v1/domains -H 'Authorization: YOUR_API_KEY'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Join the FishFish Discord server and run the /key command to obtain an API key",
+      "Use the API key in the Authorization header for requests",
+      "Make a GET request to https://api.fishfish.gg/v1/domains to fetch phishing domains"
+    ],
+    "authentication": {
+      "type": "API Key",
+      "description": "Include your API key in the Authorization header for authenticated requests. Obtain a key via the /key command in the FishFish Discord server."
+    },
+    "sdks": [
+      {
+        "language": "Python",
+        "name": "fishfish-py",
+        "official": true
+      },
+      {
+        "language": "JavaScript",
+        "name": "fishfish-js",
+        "official": true
+      },
+      {
+        "language": "C#",
+        "name": "fishfish-net",
+        "official": true
+      }
+    ]
+  }
+}

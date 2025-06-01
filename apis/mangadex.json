@@ -1,0 +1,68 @@
+{
+  "id": "mangadex",
+  "name": "MangaDex",
+  "description": "A REST API for accessing a comprehensive manga database, including titles, chapters, and scanlation group data, with OAuth 2.0 authentication",
+  "website": "https://mangadex.org",
+  "docs": "https://api.mangadex.org/docs/",
+  "category": "Anime",
+  "auth": "oauth",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "manga",
+    "anime",
+    "rest",
+    "scanlation"
+  ],
+  "about": {
+    "overview": "MangaDex API provides developers with access to a vast manga database, supporting searches, chapter retrieval, and user list management, with a focus on crediting scanlation groups and community-driven content.",
+    "features": [
+      "RESTful API with JSON responses",
+      "OAuth 2.0 authentication for user-specific actions",
+      "Advanced search with tag and demographic filtering",
+      "Chapter and cover image retrieval"
+    ],
+    "useCases": [
+      "Building manga reader applications",
+      "Creating manga tracking tools",
+      "Integrating manga data into Discord bots",
+      "Analyzing manga trends and scanlation group activity"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/manga",
+        "description": "Search for manga with optional query parameters like title or tags"
+      },
+      {
+        "method": "GET",
+        "path": "/at-home/server/{chapterId}",
+        "description": "Retrieve image URLs for a specific manga chapter"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "const axios = require('axios');\naxios.get('https://api.mangadex.org/manga?title=One%20Piece').then(res => console.log(res.data.data));",
+      "python": "import requests\nresponse = requests.get('https://api.mangadex.org/manga?title=One%20Piece')\nprint(response.json()['data'])",
+      "curl": "curl -X GET 'https://api.mangadex.org/manga?title=One%20Piece'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Visit https://api.mangadex.org/docs/ for detailed documentation",
+      "Register an OAuth client at https://mangadex.org/settings for authenticated requests",
+      "Make a GET request to https://api.mangadex.org/manga to start exploring"
+    ],
+    "rateLimit": {
+      "requests": 5,
+      "period": "per second"
+    },
+    "authentication": {
+      "type": "OAuth",
+      "description": "Use OAuth 2.0 for authenticated requests; obtain tokens via https://auth.mangadex.org and include as 'Bearer YOUR_TOKEN' in the Authorization header."
+    },
+    "sdks": []
+  }
+}

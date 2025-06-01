@@ -77,11 +77,9 @@ class DevSetup {
       category: "Development",
       auth: "apiKey",
       https: true,
-      cors: true,
       dateAdded: new Date().toISOString().split('T')[0],
       featured: false,
       tags: ["example", "demo", "development"],
-      screenshotUrl: "https://example-api.com/screenshot.png",
       about: {
         overview: "A comprehensive example API that demonstrates best practices for API design and documentation.",
         features: [

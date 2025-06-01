@@ -7,7 +7,6 @@
   "category": "Animals",
   "auth": "none",
   "https": true,
-  "cors": true,
   "featured": false,
   "tags": ["images", "random"],
   "dateAdded": "2025-05-24",

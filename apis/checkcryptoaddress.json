@@ -7,7 +7,6 @@
   "category": "Blockchain",
   "auth": "apiKey",
   "https": true,
-  "cors": true,
   "featured": false,
   "tags": ["blockchain", "crypto", "wallet", "validation", "transactions"],
   "dateAdded": "2025-05-24",

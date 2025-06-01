@@ -1,0 +1,68 @@
+{
+  "id": "urlhaus",
+  "name": "URLhaus",
+  "description": "A REST API for querying and submitting malicious URLs used for malware distribution, supporting bulk queries and payload downloads",
+  "website": "https://urlhaus.abuse.ch",
+  "docs": "https://urlhaus-api.abuse.ch/",
+  "category": "Anti-Malware",
+  "auth": "apiKey",
+  "https": true,
+  "dateAdded": "2025-06-01",
+  "featured": false,
+  "tags": [
+    "malware",
+    "urls",
+    "cybersecurity",
+    "threat intelligence"
+  ],
+  "about": {
+    "overview": "URLhaus API, operated by abuse.ch, enables researchers and security professionals to query and submit malicious URLs involved in malware distribution, providing detailed metadata like tags, hashes, and status, with integration options for SIEM and threat intelligence platforms.",
+    "features": [
+      "Query recent or specific malicious URLs",
+      "Download malware payloads (zipped, password: 'infected')",
+      "Submit new malware URLs with optional anonymity",
+      "Support for JSON and CSV data formats"
+    ],
+    "useCases": [
+      "Integrating malicious URL detection into security tools",
+      "Automating threat intelligence for SIEM platforms",
+      "Researching malware distribution patterns",
+      "Enhancing network security with real-time URL checks"
+    ]
+  },
+  "examples": {
+    "endpoints": [
+      {
+        "method": "POST",
+        "path": "/v1/urls/recent/",
+        "description": "Retrieve a list of recently added malicious URLs"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/url/",
+        "description": "Query details about a specific URL in the database"
+      }
+    ],
+    "codeSnippets": {
+      "javascript": "fetch('https://urlhaus-api.abuse.ch/v1/urls/recent/', { method: 'POST', headers: { 'Auth-Key': 'YOUR_API_KEY' } }).then(res => res.json())",
+      "python": "import requests\nresponse = requests.post('https://urlhaus-api.abuse.ch/v1/urls/recent/', headers={'Auth-Key': 'YOUR_API_KEY'})",
+      "curl": "curl -X POST https://urlhaus-api.abuse.ch/v1/urls/recent/ -H 'Auth-Key: YOUR_API_KEY'"
+    }
+  },
+  "documentation": {
+    "quickStart": [
+      "Register for a free API key at https://auth.abuse.ch/",
+      "Include the API key in the 'Auth-Key' header for authenticated requests",
+      "Make a POST request to https://urlhaus-api.abuse.ch/v1/urls/recent/ to retrieve recent malicious URLs"
+    ],
+    "rateLimit": {
+      "requests": 1000,
+      "period": "per day"
+    },
+    "authentication": {
+      "type": "API Key",
+      "description": "Include your API key in the 'Auth-Key' header for authenticated requests; some endpoints allow anonymous access."
+    },
+    "sdks": []
+  }
+}
